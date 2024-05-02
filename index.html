@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: antiquewhite;
+    }
+    .calculator {
+        width: 350px;
+        height: 400px;
+        margin: 50px auto;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: cadetblue;
+    }
+    .calculator input[type="button"] {
+        width: 50px;
+        height: 50px;
+        margin: 8px;
+        font-size: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .calculator input[type="text"] {
+        width: 96%;
+        height: 50px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        text-align: right;
+        padding: 5px;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="result" readonly>
+    <input type="button" value="7" onclick="addToResult('7')">
+    <input type="button" value="8" onclick="addToResult('8')">
+    <input type="button" value="9" onclick="addToResult('9')">
+    <input type="button" value="/" onclick="addToResult('/')">
+    <br>
+    <input type="button" value="4" onclick="addToResult('4')">
+    <input type="button" value="5" onclick="addToResult('5')">
+    <input type="button" value="6" onclick="addToResult('6')">
+    <input type="button" value="*" onclick="addToResult('*')">
+    <br>
+    <input type="button" value="1" onclick="addToResult('1')">
+    <input type="button" value="2" onclick="addToResult('2')">
+    <input type="button" value="3" onclick="addToResult('3')">
+    <input type="button" value="-" onclick="addToResult('-')">
+    <br>
+    <input type="button" value="0" onclick="addToResult('0')">
+    <input type="button" value="." onclick="addToResult('.')">
+    <input type="button" value="=" onclick="calculate()">
+    <input type="button" value="+" onclick="addToResult('+')">
+    <br>
+    <input type="button" value="C" onclick="clearResult()">
+</div>
+
+<script>
+    function addToResult(value) {
+        document.getElementById('result').value += value;
+    }
+
+    function calculate() {
+        var result = eval(document.getElementById('result').value);
+        document.getElementById('result').value = result;
+    }
+
+    function clearResult() {
+        document.getElementById('result').value = '';
+    }
+</script>
+
+</body>
+</html>
